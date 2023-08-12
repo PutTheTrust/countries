@@ -1,5 +1,13 @@
 .home {
   margin-inline: 20px;
+  max-width: 1280px;
+  margin-inline: auto;
+  &__countries {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 60px;
+    margin-top: 40px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -7,6 +15,10 @@
     &__input {
       display: flex;
       justify-content: space-between;
+    }
+
+    &__countries {
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 }
