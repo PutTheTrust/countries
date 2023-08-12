@@ -1,3 +1,12 @@
 .home {
   margin-inline: 20px;
 }
+
+@media (min-width: 768px) {
+  .home {
+    &__input {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

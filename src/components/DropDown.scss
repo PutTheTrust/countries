@@ -1,0 +1,14 @@
+.dropdown {
+  height: 60px;
+  width: 246px;
+  margin-top: 50px;
+  box-shadow: var(--shadow);
+  border: none;
+  padding-inline: 30px;
+}
+
+@media (min-width: 768px) {
+  .dropdown {
+    margin-top: 0;
+  }
+}
