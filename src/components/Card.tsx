@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Card.scss";
 
 interface CardProps {
@@ -17,7 +18,9 @@ const Card: React.FC<CardProps> = ({
 }) => {
   return (
     <div className="card">
-      <img className="card__img" src={flag} alt="flag" />
+      <Link to={`/${name}`}>
+        <img className="card__img" src={flag} alt="flag" />
+      </Link>
 
       <div className="card__body">
         <h2>{name}</h2>
