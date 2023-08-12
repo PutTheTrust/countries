@@ -1,9 +1,16 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.scss";
+import { Country, Home } from "./pages";
+import Header from "./components/Header";
 
 function App() {
   return (
     <>
-      <h1 className="app">Countries</h1>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/:country" element={<Country />} />
+      </Routes>
     </>
   );
 }

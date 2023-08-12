@@ -1,0 +1,46 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px; // 100px
+  padding-inline: 21px; // 21px
+  //   box-shadow: 5px 2px black;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+  &__logo {
+    font-size: 18px; // 18px
+    font-weight: 800;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    gap: 10px; //10px
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+    &__icon {
+      width: 18px;
+      height: 18px;
+    }
+
+    &__text {
+      font-weight: 600;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+    height: 80px;
+
+    &__logo {
+      font-size: 22px;
+    }
+
+    &__text {
+      font-weight: 800;
+    }
+  }
+}
