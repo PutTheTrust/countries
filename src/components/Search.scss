@@ -1,0 +1,20 @@
+.search {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 60px;
+  padding-inline: 39px;
+  border-radius: 6px;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+  &__input {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    ::placeholder {
+      color: black;
+    }
+  }
+}

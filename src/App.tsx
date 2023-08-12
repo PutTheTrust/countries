@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.scss";
 import { Country, Home } from "./pages";
-import Header from "./components/Header";
+import { Header } from "./components";
 
 function App() {
   return (
