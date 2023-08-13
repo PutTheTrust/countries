@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import "./App.scss";
 import { Country, Home } from "./pages";
 import { Header } from "./components";
 
@@ -9,7 +8,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/:country" element={<Country />} />
+        <Route path="/:countryId" element={<Country />} />
       </Routes>
     </>
   );
