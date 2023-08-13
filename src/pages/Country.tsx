@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-import { ArrowLeft, Languages } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import "./Country.scss";
 
 const Country = () => {
