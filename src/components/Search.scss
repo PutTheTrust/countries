@@ -1,5 +1,5 @@
 .search {
-  background-color: white;
+  background-color: var(--header);
   display: flex;
   align-items: center;
   gap: 16px;
@@ -13,8 +13,9 @@
     background-color: transparent;
     border: none;
     outline: none;
-    ::placeholder {
-      color: black;
+    color: var(--text);
+    &::placeholder {
+      color: var(--text);
     }
   }
 }

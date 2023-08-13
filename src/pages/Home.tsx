@@ -35,23 +35,21 @@ const Home = () => {
         <DropDown />
       </div>
 
-      <div className="home__countries">
-        {isLoading ? (
-          <p>Loading...</p>
+      {isLoading ? <div className="loader"></div> : <p>Done</p>}
+
+      {/* {isLoading? (
+
+): (
+  {regionData.map((country: any) => (
+
+  ))}
+)} */}
+
+      {/* {isLoading ? (
+          <div className="loader"></div>
         ) : (
-          regionData.map((country: any) => (
-            <Card
-              key={country.name.common}
-              flag={country.flags.svg}
-              name={country.name.common}
-              population={country.population}
-              region={country.region}
-              capital={country.capital}
-            />
-            // <p>{country.name.common}</p>
-          ))
-        )}
-      </div>
+
+        )} */}
     </div>
   );
 };

@@ -4,6 +4,8 @@
   box-shadow: var(--shadow);
   border-radius: 6px;
   margin-inline: auto;
+  color: var(--text);
+  background-color: var(--header);
   &__img {
     width: 100%;
     height: 200px;

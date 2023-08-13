@@ -5,6 +5,8 @@
   box-shadow: var(--shadow);
   border: none;
   padding-inline: 30px;
+  background-color: var(--header);
+  color: var(--text);
 }
 
 @media (min-width: 768px) {

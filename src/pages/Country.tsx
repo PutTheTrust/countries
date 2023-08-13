@@ -56,14 +56,11 @@ const Country = () => {
         Back
       </button>
       <div className="country__info">
-        {!isLoading && (
+        {!isLoading ? (
           <>
-            <img
-              className="country__info-img"
-              src={country?.flags?.svg}
-              alt="flag"
-            />
-
+            <div className="country__info-img">
+              <img src={country?.flags?.svg} alt="flag" />
+            </div>
             <div className="country__info-right">
               <h2 className="country__info-title">{country?.name?.common}</h2>
               <div className="country__info__container">
@@ -110,6 +107,8 @@ const Country = () => {
               </div>
             </div>
           </>
+        ) : (
+          <div className="loader"></div>
         )}
       </div>
     </div>
