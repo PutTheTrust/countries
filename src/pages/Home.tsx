@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 
 const Home = () => {
   const [countries, setCountries] = useState([]);
-  const [isLoading, setLoading] = useState(false);
+  const [isLoading, setLoading] = useState<boolean>();
   const name = useSelector((state: any) => state.countryStore.country);
   const region = useSelector((state: any) => state.countryStore.region);
   useEffect(() => {
@@ -16,9 +16,9 @@ const Home = () => {
       const data = await axios.get("https://restcountries.com/v3.1/all");
 
       setCountries(data.data);
+      setLoading(false);
     };
     fetchCountries();
-    setLoading(false);
   }, []);
 
   const filteredData = countries.filter((item: any) =>

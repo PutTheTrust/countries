@@ -18,35 +18,31 @@ const Country = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => {
-        setCountry(data[0]);
-        const nativeLang = Object.keys(data[0].name.nativeName);
-        nativeLang.forEach((nat) => {
-          setNative(data[0].name.nativeName[nat].common);
-          // console.log(data[0].name.nativeName[nat].common);
+    const fetchCountry = async () => {
+      await fetch(url)
+        .then((res) => res.json())
+        .then((data) => {
+          setCountry(data[0]);
+          const nativeLang = Object.keys(data[0].name.nativeName);
+          nativeLang.forEach((nat) => {
+            setNative(data[0].name.nativeName[nat].common);
+          });
+
+          const currencies = Object.keys(data[0].currencies);
+          currencies.forEach((currency) => {
+            setCurrency(data[0].currencies[currency].name);
+          });
+
+          const languages = Object.keys(data[0].languages);
+          languages.forEach((lang) => {
+            setLanguage(data[0].languages[lang]);
+          });
+
+          setBorder(data[0].borders);
         });
-
-        const currencies = Object.keys(data[0].currencies);
-        currencies.forEach((currency) => {
-          setCurrency(data[0].currencies[currency].name);
-          // console.log(data[0].currencies[currency].name);
-          // console.log(currency);
-        });
-
-        const languages = Object.keys(data[0].languages);
-        // console.log(languages);
-        languages.forEach((lang) => {
-          setLanguage(data[0].languages[lang]);
-          // console.log(data[0].currencies[currency].name);
-          // console.log(currency);
-        });
-
-        setBorder(data[0].borders);
-      });
-
-    setLoading(false);
+      setLoading(false);
+    };
+    fetchCountry();
   }, []);
 
   return (
