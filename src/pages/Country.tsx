@@ -9,7 +9,7 @@ const Country = () => {
   const [country, setCountry] = useState<any>([]);
   const [native, setNative] = useState();
   const [currency, setCurrency] = useState();
-  const [language, setLanguage] = useState();
+  const [language, setLanguage] = useState<string[]>([]);
   const [borders, setBorder] = useState([]);
 
   const navigate = useNavigate();
@@ -34,10 +34,11 @@ const Country = () => {
           });
 
           const languages = Object.keys(data[0].languages);
+          let tmp: string[] = [];
           languages.forEach((lang) => {
-            setLanguage(data[0].languages[lang]);
+            tmp.push(data[0].languages[lang]);
           });
-
+          setLanguage(tmp);
           setBorder(data[0].borders);
         });
       setLoading(false);
@@ -88,7 +89,12 @@ const Country = () => {
                   </p>
 
                   <p className="xd">
-                    <span>Languages:</span> {language}
+                    <span>Languages:</span>{" "}
+                    <ul>
+                      {language.map((lang: string) => (
+                        <li>{lang}</li>
+                      ))}
+                    </ul>
                   </p>
                 </div>
               </div>
