@@ -97,7 +97,9 @@ const Country = () => {
                 <div className="country__info-border">
                   {borders &&
                     borders.map((b: any) => (
-                      <p className="country__info-border-card">{b}</p>
+                      <p key={b} className="country__info-border-card">
+                        {b}
+                      </p>
                     ))}
                 </div>
               </div>
