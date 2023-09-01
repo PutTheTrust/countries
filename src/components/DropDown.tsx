@@ -13,6 +13,7 @@ const DropDown = () => {
       name="countries"
       id="countries"
       onChange={(e) => handleChange(e)}
+      role="dropdown"
     >
       <option value="">Filter by Region</option>
       <option value="africa">Africa</option>
