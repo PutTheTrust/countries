@@ -16,6 +16,7 @@ const Search = () => {
     <div className="search">
       <SearchIcon />
       <input
+        role="search"
         className="search__input"
         type="text"
         placeholder="Search for a country..."
