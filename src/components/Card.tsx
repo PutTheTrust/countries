@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Card.scss";
+import { useDispatch } from "react-redux";
+import { clearStore } from "../store/slice/countrySlice";
 
 interface CardProps {
   flag: string;
@@ -16,10 +18,19 @@ const Card: React.FC<CardProps> = ({
   region,
   capital,
 }) => {
+  const dispatch = useDispatch();
+  const clearStoreValues = () => {
+    dispatch(clearStore(""));
+  };
   return (
     <div className="card">
       <Link to={`/${name}`}>
-        <img className="card__img" src={flag} alt="flag" />
+        <img
+          onClick={() => clearStoreValues()}
+          className="card__img"
+          src={flag}
+          alt="flag"
+        />
       </Link>
 
       <div className="card__body">

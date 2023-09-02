@@ -13,8 +13,13 @@ export const countrySlice = createSlice({
     searchByRegion: (state, action) => {
       state.region = action.payload;
     },
+    clearStore: (state, action) => {
+      state.country = action.payload;
+      state.region = action.payload;
+    },
   },
 });
 
-export const { searchByCountry, searchByRegion } = countrySlice.actions;
+export const { searchByCountry, searchByRegion, clearStore } =
+  countrySlice.actions;
 export const countryReducer = countrySlice.reducer;
