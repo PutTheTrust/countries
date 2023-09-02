@@ -88,14 +88,14 @@ const Country = () => {
                     <span>Currencies:</span> {currency}
                   </p>
 
-                  <p className="xd">
+                  <div className="xd">
                     <span>Languages:</span>{" "}
                     <ul>
                       {language.map((lang: string) => (
-                        <li>{lang}</li>
+                        <li key={lang}>{lang}</li>
                       ))}
                     </ul>
-                  </p>
+                  </div>
                 </div>
               </div>
               <div className="bo">
